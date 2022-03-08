@@ -10,7 +10,9 @@
 
 int  main ()
 {
-    /*take input of no. of node initilaize window*/
+    //take input of no. of node 
+    //initilaize window
+    //Represent graph in Adjacency List
     int **weight;
     int no_of_nodes;
     GUI graphics;
@@ -57,15 +59,15 @@ int  main ()
     }
 
 
-    for(int i=0;i<no_of_nodes;i++)
-    {
-        for(int j=0;j<no_of_nodes;j++)
-        {
-                std::cout<<weight[i][j]<<" ";
-        }
-        std::cout<<std::endl;
+    // for(int i=0;i<no_of_nodes;i++)
+    // {
+    //     for(int j=0;j<no_of_nodes;j++)
+    //     {
+    //             std::cout<<weight[i][j]<<" ";
+    //     }
+    //     std::cout<<std::endl;
 
-    }
+    // }
 
     unsigned int dist[no_of_nodes],perm[no_of_nodes];
     unsigned int current,k,dc,smalldist,newdist,membnodes=0;
