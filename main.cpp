@@ -12,8 +12,7 @@ int  main ()
 {
     //take input of no. of node 
     //initilaize window
-    //Represent graph in Adjacency List
-    int **weight;
+    int **weight; //Initialize array of pointers
     int no_of_nodes;
     GUI graphics;
     if(graphics.start())
