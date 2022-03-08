@@ -25,7 +25,16 @@ int  main ()
     {
         for(int j=0;j<no_of_nodes;j++)
         {
+            if (i==j)
+            {
+                weight[i][j]=0;
+            }
+            else
+            {
                 weight[i][j]=INFINITY;
+            }
+            
+                
         }
     }
 
