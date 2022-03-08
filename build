@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+files="main.cpp GUI.cpp"
+flags="-std=c++2a -O2 -pipe"
+paths=" "
+libs="-lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio"
+
+export HEADBALL=${PWD}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
+
+echo 'Compiling...' ; time g++ ${flags} ${files} -o main ${paths} ${libs} && echo -e '----------\nRunning...'; ./main
