@@ -66,8 +66,8 @@ int  main ()
 
     // }
 
-    unsigned int dist[no_of_nodes],perm[no_of_nodes]; // dist array stores the distance from souce vertex to each vertex and perm array stores the visited vertex in the array
-    unsigned int current,k,dc,smalldist,newdist,membnodes=0; //current stores the current vertex, membnodes counts the total no of visited nodes
+    unsigned int dist[no_of_nodes],perm[no_of_nodes]; // dist array stores the distance from souce vertex to each vertex, perm array stores the visited vertex in the list
+    unsigned int current,k,dc,smalldist,newdist,membnodes=0; //current stores the current vertex, membnodes counts the total no of visited nodes,smalldist stores the smallest distance form the source
     unsigned int s=0,pd,precede[no_of_nodes]; //s stores the source node, precede array stores the vertex that precede vectex precede[i]=vertex that precede vertex[i] in the shortest path
 
     for(int i=0;i<no_of_nodes;i++)
@@ -76,26 +76,26 @@ int  main ()
         dist[i]=INFINITY;
     }
     //s=graphics.selectSource();
-    perm[s]=MEMBER;
+    perm[s]=MEMBER; // Add source vertex in the visited vertex list
     membnodes=1;
     dist[s]=0;
     current=s;
-    graphics.update(s,s);
+    graphics.update(s,s);//update the window
 
     while(true)
     {
-        smalldist=INFINITY;
-        dc=dist[current];
+        smalldist=INFINITY; // Initialize smalldist as infinity
+        dc=dist[current];//store distance of current vertex from source vertex in dc
         for(int i=0;i<no_of_nodes;i++)
-            if((perm[i]==NONMEMBER))
-            {if (weight[current][i]!=INFINITY)
-            {
-            newdist=dc+weight[current][i];
-            if(newdist<dist[i])
-            {
-                dist[i]=newdist;
-                precede[i]=current;
-            }
+            if((perm[i]==NONMEMBER)) // if vertex i is not visited
+            {   if (weight[current][i]!=INFINITY) //if edge is defined between current vertex and vertex i
+                {
+                    newdist=dc+weight[current][i]; // calculate the distance of vertex i from source vertex succeeding current vertex
+                    if(newdist<dist[i])
+                    {   //If newdist is smaller than distance of vertex i from souce vertex
+                        dist[i]=newdist; 
+                        precede[i]=current;
+                    }
             }
 
             if (dist[i]<smalldist)
