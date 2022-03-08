@@ -10,17 +10,15 @@
 
 int  main ()
 {
-    //take input of no. of node 
-    //initilaize window
     int **weight; //Initialize array of pointers
     int no_of_nodes;
     GUI graphics;
-    if(graphics.start())
+    if(graphics.start()) //initilaize window
     {
-     no_of_nodes=graphics.drawnodes();
-     weight = new int*[no_of_nodes];
+     no_of_nodes=graphics.drawnodes(); // take no of nodes from GUI method drawnodes
+     weight = new int*[no_of_nodes];  //dynamically allocate memory for n=no. of nodes pointers
      for(int i = 0; i < no_of_nodes; ++i)
-     weight[i] = new int[no_of_nodes];
+     weight[i] = new int[no_of_nodes]; // each pointer pin weight[i] points to n= no of nodes element
 
      for(int i=0;i<no_of_nodes;i++)
     {
@@ -28,18 +26,18 @@ int  main ()
         {
             if (i==j)
             {
-                weight[i][j]=0;
+                weight[i][j]=0; // V0-->V0=0
             }
             else
             {
-                weight[i][j]=INFINITY;
+                weight[i][j]=INFINITY; // If no edge is defined between two vertex weight is set to infinity
             }
             
                 
         }
     }
 
-    graphics.inputWeight(weight);
+    graphics.inputWeight(weight); //provides the weight of each edge entered by the user in the window
     for(int i=0;i<no_of_nodes;i++)
     {
         for(int j=0;j<no_of_nodes;j++)
@@ -49,7 +47,7 @@ int  main ()
 
             if (i>j)
             {
-                weight[i][j]=weight[j][i];
+                weight[i][j]=weight[j][i]; // Since the graph is undirected V1-->V2 == V2-->V1
             }
 
 
@@ -68,16 +66,16 @@ int  main ()
 
     // }
 
-    unsigned int dist[no_of_nodes],perm[no_of_nodes];
-    unsigned int current,k,dc,smalldist,newdist,membnodes=0;
-    unsigned int s=0,pd,precede[no_of_nodes];
+    unsigned int dist[no_of_nodes],perm[no_of_nodes]; // dist array stores the distance from souce vertex to each vertex and perm array stores the visited vertex in the array
+    unsigned int current,k,dc,smalldist,newdist,membnodes=0; //current stores the current vertex, membnodes counts the total no of visited nodes
+    unsigned int s=0,pd,precede[no_of_nodes]; //s stores the source node, precede array stores the vertex that precede vectex precede[i]=vertex that precede vertex[i] in the shortest path
 
     for(int i=0;i<no_of_nodes;i++)
     {
         perm[i]=NONMEMBER;
         dist[i]=INFINITY;
     }
-
+    //s=graphics.selectSource();
     perm[s]=MEMBER;
     membnodes=1;
     dist[s]=0;

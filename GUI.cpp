@@ -20,7 +20,7 @@ GUI::GUI()
     }
 
 int GUI::start()
-    {
+{
     int status=1;
     int startkey=0;
     sf::Text text;
@@ -537,3 +537,75 @@ int GUI::drawnodes()
         //set outline of the the circle of nodeno
 
     }
+
+// int GUI::selectSource(){
+//     int stop=0,s=0;
+//     sf::Text text1;
+//     text1.setFont(font);
+//     text1.setString("Select the source node");
+//     text1.setCharacterSize(20);
+//     text1.setFillColor(sf::Color::Black);
+//     text1.setPosition(930,675);
+//     while (window.isOpen())
+//     {   
+//         window.draw(text1);
+//         sf::Event event;
+//         while (window.pollEvent(event))
+//         {   
+//             int overlap=0,offfield=0;
+//             // "close requested" event: we close the window
+//             if (event.type == sf::Event::Closed)
+//                {
+//                    window.close();
+//                }
+
+//              if (event.type == sf::Event::MouseButtonPressed)
+//             {
+
+//                 sf::IntRect ButtonRect;
+//                 sf::Vector2i mouse=sf::Mouse::getPosition(window);
+
+//                 for (int i=0;i<no_of_nodes;i++)
+//                 {
+//                     ButtonRect=sf::IntRect(node[i].getPosition().x, node[i].getPosition().y, node[i].getGlobalBounds().width*2, node[i].getGlobalBounds().height*2);
+
+//                     if (ButtonRect.contains(mouse))
+//                     {
+//                         s=i;
+//                         stop=1;
+//                         break;
+//                     }
+//                 }
+
+//                 ButtonRect=sf::IntRect(text1.getPosition().x, text1.getPosition().y, text1.getGlobalBounds().width, text1.getGlobalBounds().height);
+//                 if (ButtonRect.contains(mouse))
+//                 {
+//                     overlap=1;
+//                     break;
+//                 }
+
+//                 if((mouse.x<40) || (mouse.y<40) || (mouse.x>1160) ||( mouse.y>660))
+//                 {
+//                     offfield=1;
+//                 }
+
+
+
+//                 if (overlap || offfield)
+//                     continue;
+
+              
+
+//             }
+// 		}
+//         if (stop)
+//             break;
+        
+
+//     }
+        
+        
+
+
+// }
+

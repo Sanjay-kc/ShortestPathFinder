@@ -33,8 +33,6 @@ public:
     int display();
 
     void update(int nodeno,int precede );
+   // int selectSource();
 
 };
-
-
-
