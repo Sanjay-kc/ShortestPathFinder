@@ -18,7 +18,7 @@ int  main ()
      no_of_nodes=graphics.drawnodes(); // take no of nodes from GUI method drawnodes
      weight = new int*[no_of_nodes];  //dynamically allocate memory for n=no. of nodes pointers
      for(int i = 0; i < no_of_nodes; ++i)
-     weight[i] = new int[no_of_nodes]; // each pointer pin weight[i] points to n= no of nodes element
+     weight[i] = new int[no_of_nodes]; // each pointer in weight[i] points to n= no of nodes element
 
      for(int i=0;i<no_of_nodes;i++)
     {
