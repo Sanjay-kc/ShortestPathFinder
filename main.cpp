@@ -88,7 +88,7 @@ int  main ()
         dc=dist[current];//store distance of current vertex from source vertex in dc
         for(int i=0;i<no_of_nodes;i++)
             if((perm[i]==NONMEMBER)) // if vertex i is not visited
-            {   if (weight[current][i]!=INFINITY) //if edge is defined between current vertex and vertex i
+            {   if (weight[current][i]!=INFINITY) //if edge is defined between current vertex and vertex i // BFS 
                 {
                     newdist=dc+weight[current][i]; // calculate the distance of vertex i from source vertex succeeding current vertex
                     if(newdist<dist[i])
@@ -99,7 +99,7 @@ int  main ()
             }
 
             if (dist[i]<smalldist)
-            {
+            {   //gives vertex nearest to current vertex
                 smalldist=dist[i];
                 k=i;
             }
